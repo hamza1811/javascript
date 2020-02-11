@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Calc | JavaScript</title>
+</head>
+<body>
+
+	First Number<input type="number" name="first_num" id="first_num"><br>
+	Second Number<input type="number" name="second_num" id="second_num"><br>
+
+	<button onclick="addition()">Addition</button>
+	<button onclick="subtraction()">Subtraction</button>	
+	<button onclick="multiplication()">Multiplication</button>
+	<button onclick="division()">Division</button>
+	<button onclick="reset()">Reset</button>
+
+
+<br>
+<p id="result" style="color:green"></p>
+
+<script type="text/javascript">
+		
+	function addition()
+	{
+	
+		var	first_num = parseFloat(document.getElementById('first_num').value);
+		var	second_num = parseFloat(document.getElementById('second_num').value);
+
+		result = first_num+second_num;
+
+		document.getElementById('result').innerHTML = result;
+	 
+	}
+
+	function subtraction()
+	{
+		var	first_num = parseFloat(document.getElementById('first_num').value);
+		var	second_num = parseFloat(document.getElementById('second_num').value);
+
+		result = first_num-second_num;
+
+		document.getElementById('result').innerHTML = result;
+	 
+	}
+
+	function multiplication()
+	{
+		var	first_num = parseFloat(document.getElementById('first_num').value);
+		var	second_num = parseFloat(document.getElementById('second_num').value);
+
+		result = first_num*second_num;
+
+		document.getElementById('result').innerHTML = result;
+	 
+	}
+	function division()
+	{
+		var	first_num = parseFloat(document.getElementById('first_num').value);
+		var	second_num = parseFloat(document.getElementById('second_num').value);
+
+		result = first_num/second_num;
+
+		document.getElementById('result').innerHTML = result;
+	 
+	}
+	function reset()
+	{
+		document.getElementById('result').innerHTML = '';
+
+	}
+</script>
+</body>
+</html>

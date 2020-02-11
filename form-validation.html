@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Form Validation | JavaScript</title>
+</head>
+<body>
+
+	<header>Form Validation</header>
+
+	<section>
+		<fieldset>
+			<form action="success.html" onsubmit="return validate()">
+			<table>
+			  <tr><td>Email </td><td><input type="email" name="email" class="email" id="email"></td></tr>
+			  <tr><td>Password </td><td><input type="Password" name="Password" class="Password" id="Password"></td></tr>
+			  <tr><td>Confirm Password </td><td><input type="Password" name="Password" class="Password" 
+			  	id="conf_Password"></td></tr>
+			  <tr><td>First Name </td><td><input type="text" name="first_name" class="first_name" id="first_name"></td></tr>
+			  <tr><td>Last Name </td><td><input type="last_name" name="last_name" class="last_name" id="last_name"></td></tr>
+			  <tr><td>Zip Code</td><td><input type="text" name="zipcode" class="zipcode" id="zipcode"></td></tr>
+
+			  <tr><td><input type="submit" name="" value="submit"></td></tr>
+
+			</table>
+			</form>
+		</fieldset>
+	</section>
+
+	<script type="text/javascript">
+		
+		function validate()
+		 {
+		 	//getting all the values from html FORM
+				
+				var email = document.getElementById('email').value;
+				var Password = document.getElementById('Password').value;
+				var conf_Password = document.getElementById('conf_Password').value;
+				var first_name = document.getElementById('first_name').value;
+				var last_name = document.getElementById('last_name').value;
+				var zipcode = document.getElementById('zipcode').value;
+
+				
+
+			//To validate a field empty or not
+
+				if(email==''||Password==''||conf_Password==''||first_name==''||last_name=='')
+				{
+					alert("all fields are required");
+					return false;
+				}
+			//To check both password and confirm password matchin or not
+				
+				if (Password!=conf_Password)
+				{
+					alert("please enter matching Password");
+					return false;
+				}
+			//To check first name can not contain numeric values
+				for (var i = first_name.length - 1; i >= 0; i--) {
+					if(!isNaN(first_name[i]))
+					{
+						alert("First Name can not contain numeric value");
+						return false;
+					}
+				}
+
+
+			//To check last name can not contain numeric values
+				for (var i = last_name.length - 1; i >= 0; i--) {
+					if(!isNaN(last_name[i]))
+					{
+						alert("Last Name can not contain numeric value");
+						return false;
+					}
+				}
+
+			//To check zip code can not contain alphabet values or it must contain 6 digit length
+				if(zipcode.length!=6||isNaN(zipcode))
+				{
+					alert("zipcode is not correct");
+					return false;
+				}
+
+
+		 }
+
+
+
+	</script>
+</body>
+</html>
